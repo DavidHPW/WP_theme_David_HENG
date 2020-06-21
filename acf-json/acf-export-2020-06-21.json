@@ -1,0 +1,259 @@
+[
+    {
+        "key": "group_5eef63927fbd7",
+        "title": "Champs pour les logements",
+        "fields": [
+            {
+                "key": "field_5eef645c2fc61",
+                "label": "Type",
+                "name": "type",
+                "type": "text",
+                "instructions": "Précisez le type de logement.",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": "Appartement, Maison, Tente...",
+                "prepend": "Type",
+                "append": "",
+                "maxlength": ""
+            },
+            {
+                "key": "field_5eef64932fc62",
+                "label": "Surface",
+                "name": "surface",
+                "type": "number",
+                "instructions": "Précisez la surface de votre logement en m².",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": 42,
+                "prepend": "Surface",
+                "append": "m²",
+                "min": "",
+                "max": "",
+                "step": ""
+            },
+            {
+                "key": "field_5eef64d92fc63",
+                "label": "Prix",
+                "name": "prix",
+                "type": "number",
+                "instructions": "Donnez le prix du logement.",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": 650000,
+                "prepend": "Prix",
+                "append": "€",
+                "min": "",
+                "max": "",
+                "step": ""
+            },
+            {
+                "key": "field_5eef65272fc64",
+                "label": "Frais d'agence",
+                "name": "frais_dagence",
+                "type": "number",
+                "instructions": "Donnez vos frais d'agence pour l'achat.",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": 500,
+                "prepend": "Frais d'agence",
+                "append": "€",
+                "min": "",
+                "max": "",
+                "step": ""
+            },
+            {
+                "key": "field_5eef65622fc65",
+                "label": "Date de mise en vente",
+                "name": "date_de_mise_en_vente_",
+                "type": "date_picker",
+                "instructions": "[current_date format=’d\/m\/Y’]",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "display_format": "d\/m\/Y",
+                "return_format": "d\/m\/Y",
+                "first_day": 1
+            },
+            {
+                "key": "field_5eef67732fc66",
+                "label": "Exposition",
+                "name": "exposition",
+                "type": "select",
+                "instructions": "Sélectionnez la cardinalité correspondant à la direction de votre vue depuis la fenêtre.",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "choices": {
+                    "Nord": "Nord",
+                    "Nord-Ouest": "Nord-Ouest",
+                    "Nord-Est": "Nord-Est",
+                    "Sud": "Sud",
+                    "Sud-Ouest": "Sud-Ouest",
+                    "Sud-Est": "Sud-Est",
+                    "Ouest": "Ouest",
+                    "Est": "Est"
+                },
+                "default_value": false,
+                "allow_null": 0,
+                "multiple": 0,
+                "ui": 0,
+                "return_format": "value",
+                "ajax": 0,
+                "placeholder": ""
+            },
+            {
+                "key": "field_5eef6827fbf53",
+                "label": "Ville",
+                "name": "ville",
+                "type": "post_object",
+                "instructions": "",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "post_type": [
+                    "post_ville"
+                ],
+                "taxonomy": "",
+                "allow_null": 0,
+                "multiple": 0,
+                "return_format": "object",
+                "ui": 1
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "post_logement"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": true,
+        "description": ""
+    },
+    {
+        "key": "group_5eee90eff1814",
+        "title": "Champs pour les villes",
+        "fields": [
+            {
+                "key": "field_5eee91008ae4e",
+                "label": "Nom",
+                "name": "nom",
+                "type": "text",
+                "instructions": "Mettez le nom de la ville.",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": "Le Mans",
+                "prepend": "Nom de la ville",
+                "append": "",
+                "maxlength": 58
+            },
+            {
+                "key": "field_5eee91c18ae4f",
+                "label": "Code postal",
+                "name": "code_postal",
+                "type": "number",
+                "instructions": "Mettez le code postal de la ville",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": 72000,
+                "prepend": "Code postal",
+                "append": "",
+                "min": "",
+                "max": "",
+                "step": ""
+            },
+            {
+                "key": "field_5eee91f98ae50",
+                "label": "Description",
+                "name": "description",
+                "type": "text",
+                "instructions": "Décrivez cette ville pour mieux attirer les clients.",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": "Une ville connue à travers le monde pour les 24h du Mans et aussi pour ses rillettes.",
+                "prepend": "",
+                "append": "",
+                "maxlength": ""
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "post_ville"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": true,
+        "description": ""
+    }
+]

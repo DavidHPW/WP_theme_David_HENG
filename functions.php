@@ -67,6 +67,9 @@ function montheme_support(){
 	add_theme_support('post-thumbnails');
 	add_theme_support( 'menus' );
 	register_nav_menu( 'header', 'en tête du menu' );
+	register_nav_menu( 'footer', 'en pied de page' );
+
+	add_image_size( 'card-header', 350, 215, true );
 }
 
 function montheme_register_assets (){
@@ -129,7 +132,7 @@ function custom_post_ville() {
 		'public'                => true,
 		'show_ui'               => true,
 		'show_in_menu'          => true,
-		'menu_position'         => 5,
+		'menu_position'         => 0,
 		'menu_icon'				=>'dashicons-admin-multisite',
 		'show_in_admin_bar'     => true,
 		'show_in_nav_menus'     => true,
@@ -138,8 +141,9 @@ function custom_post_ville() {
 		'exclude_from_search'   => false,
 		'publicly_queryable'    => true,
 		'capability_type'       => 'page',
+		'supports'				=> ['thumbnail']
 	);
-	register_post_type( 'post_ville', $args );
+		register_post_type( 'post_ville', $args );
 
 }
 
@@ -185,7 +189,7 @@ function custom_post_logement() {
 		'public'                => true,
 		'show_ui'               => true,
 		'show_in_menu'          => true,
-		'menu_position'         => 5,
+		'menu_position'         => 1,
 		'menu_icon'             => 'dashicons-admin-home',
 		'show_in_admin_bar'     => true,
 		'show_in_nav_menus'     => true,
@@ -194,18 +198,50 @@ function custom_post_logement() {
 		'exclude_from_search'   => false,
 		'publicly_queryable'    => true,
 		'capability_type'       => 'page',
+		'supports'				=> ['thumbnail']
 	);
-	register_post_type( 'post_logement', $args );
+		register_post_type( 'post_logement', $args );
+
 
 }
 
-// Enregistrer les champs ACF en JSON dans le thème
-function capitaine_json_save_groups( $path ) {
-	$path = get_stylesheet_directory() . '/acf-json';
-	return $path;
+
+
+
+function my_acf_json_load_point( $paths ) {
+    
+    // remove original path (optional)
+    unset($paths[0]);
+    
+    
+    // append path
+    $paths[] = get_stylesheet_directory() . '/acf-json';
+    
+    
+    // return
+    return $paths;
+    
 }
+
+function montheme_menu_class ($classe){
+	$classe[] = 'nav_item';
+	return $classe;
+
+}
+
+function montheme_menu_link ($att){
+	$att['class'] = 'nav-link';
+	return $att;
+
+}
+
+add_filter('acf/settings/load_json', 'my_acf_json_load_point');
 
 add_filter( 'acf/settings/save_json', 'capitaine_json_save_groups' );
+
+add_filter('nav_menu_css_class' , 'montheme_menu_class');
+
+add_filter( 'nav_menu_link_attributes', 'montheme_menu_link');
 
 add_action( 'init', 'custom_post_logement', 0 );
 
